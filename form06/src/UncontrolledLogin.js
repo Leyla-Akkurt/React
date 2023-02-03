@@ -1,10 +1,15 @@
-import React from "react";
+import React,{createRef} from "react";
 
 export class UncontrolledLogin extends React.Component{
     
+    constructor(props){
+        super(props);
+        this.nameInput=createRef();
+    }
 
      componentDidMount(){
-        this.nameInput.focus(); 
+        this.nameInput.current.focus();
+        console.log(this.nameInput)
      } 
 
      
@@ -34,7 +39,7 @@ export class UncontrolledLogin extends React.Component{
             <div>
                 <form onSubmit={this.handleFormSubmit}>
                         <input
-                        ref={(input) => { this.nameInput = input; }} 
+                        ref={this.nameInput} 
                         name="username" 
                         />
 

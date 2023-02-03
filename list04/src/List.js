@@ -20,9 +20,12 @@ export class List extends React.Component{
         this.setState(
             {
                 //before json listItem: [...this.state.listItem, this.state.addItem ]  
-                listItem: [...this.state.listItem, {title: this.state.addItem} ]  
-            }                    
-)}
+                listItem: [...this.state.listItem, {title: this.state.addItem} ],
+                addItem:""
+                
+            }    
+
+        )}
    
   
     render(){
@@ -39,6 +42,7 @@ export class List extends React.Component{
 
                 <input
                 name="listItem"
+                value={this.state.addItem}
                 onChange={this.handleOnchange}
                 />
                 <button 

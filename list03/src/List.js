@@ -19,7 +19,7 @@ export class List extends React.Component{
      handleOnclick=()=>{
         this.setState(
             {
-                listItem: [...this.state.listItem, this.state.addItem ]  
+                listItem: [...this.state.listItem, {title: this.state.addItem} ]  
             }                    
 )}
    

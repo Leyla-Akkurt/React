@@ -34,9 +34,22 @@ export class List extends React.Component{
             })
         }
 
-        handleRemoveItem=(element)=>{
+        handleRemoveItem=(element,index)=>{
            
-           console.log(element)
+           //console.log(element);
+           console.log(index)
+          
+           //console.log(newElement);
+           this.setState((state)=>{
+           if(state.listItem[index].title===element){
+            state.listItem.splice(index,1)
+           }
+          return state.listItem
+            
+           }
+          
+           )
+         
 
            } 
    
@@ -46,11 +59,11 @@ export class List extends React.Component{
             const items=this.state.listItem.map(
                 (todo,index)=>
                 
-                <li key={index}>{todo.title}
-                  <button 
+                <li key={todo.id}>{todo.title}
+                <button 
                 name="remove" 
                 type="reset"
-                onClick={this.handleRemoveItem(todo.title)}
+                onClick={()=>{this.handleRemoveItem(todo.title,index)}}
                 >
                 Remove
                 </button></li> 

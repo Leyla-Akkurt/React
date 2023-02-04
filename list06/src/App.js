@@ -2,10 +2,10 @@ import React from "react";
 import { List } from "./List";
 
 const toDoList=[
-  { title:"Make a cake"},
-  { title:"Go to Gym"},
-  { title:"Clean the Home"},
-  { title:"Take a shower"}
+  { id:0,title:"Make a cake"},
+  { id:1,title:"Go to Gym"},
+  { id:2,title:"Clean the Home"},
+  { id:3,title:"Take a shower"}
 ];
 
 export class App extends React.Component{

@@ -3,7 +3,13 @@ import React from "react";
 
 export class List extends React.Component{
     state={
-        listItem:this.props.todos,
+        listItem:
+                    [
+                    { title:"Make a cake"},
+                    { title:"Go to Gym"},
+                    { title:"Clean the Home"},
+                    { title:"Take a shower"}
+                    ],
         addItem:""
     }
      componentDidUpdate(){
@@ -27,15 +33,11 @@ export class List extends React.Component{
   
     render(){
        
-            const items=this.state.listItem.map(
-                (todo,index)=>
-                <li key={index}>{todo.title}</li>
-           );
+          
         return(
             <div>
-                <ul>
-                 {items}
-                </ul>
+              <ul> {this.props.render(this.state.listItem)}</ul>
+               
 
                 <input
                 name="listItem"

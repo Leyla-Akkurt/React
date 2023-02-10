@@ -23,7 +23,7 @@ export function GithubUser( {username} ) {
     //since we use username in useEffect Hook we should define dependency array
 
 
-return <div>{data && <h1> {data.name}</h1>}</div>//?
+return <div>{data && <h1> {data.name || data.login}</h1>}</div>//?
 
 
 }

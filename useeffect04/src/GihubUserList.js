@@ -15,16 +15,14 @@ export function GithubUserList(){
      const handleOnclick=()=>{
         setAddUserName(addUserName => [addUserName])
                 } 
-console.log(addUserName);
 
 
-  
     return(
         <div>
         <input name="username" onChange={handleOnchange}/>
         <button onClick={ handleOnclick}>Add User Name</button>
 
-        <GithubUser username={addUserName}/>
+        <GithubUser username={addUserName} onClick={handleOnclick}/>
         
         </div>
     )

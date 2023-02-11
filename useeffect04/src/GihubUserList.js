@@ -2,31 +2,44 @@ import { useEffect, useState } from "react";
 import { useGithubUser } from "./useGithubUser"
 
 
-export function GithubUserList(){
- const [name,setName]=useState("");
+export function GithubUserList() {
+ const [name,setName]=useState([]);
 const {data,setData,fetchGithubUser}=useGithubUser(name);
- const [list,setList]=useState([data]);
+ const [list,setList]=useState([]);
 
 
  const handleGetUserData=(event)=>{
-    event.preventDefault();
+ // event.preventDefault();
+    //event.preventDefault();
     fetchGithubUser(name)
-    setList([...list,data])
+    
+    setList([...list,data.name])
+      
 }
-/* const arr=[ {value: "title",id:1} ];
- console.log(arr.id) */
-   useEffect(()=>{
-    console.log( list)
-  },[list]) 
 
+
+    useEffect(()=>{
+    list.map(a=>
+      <li>{a}</li>)
+  }
+  ,[list])   
+
+ 
+
+
+console.log(list)
     return(
        
         <div>
             <input value={name} onChange={e=>setName(e.target.value)}/>
             <button onClick={handleGetUserData}>Load User Data</button>
-            {data && <li>User Name: {data.name || data.login}</li>}
-            
-            
+         
+ 
+            {
+    list.map(a=>
+     <li>User Name: {a}</li>
+   )
+ }
         </div>
         )
         

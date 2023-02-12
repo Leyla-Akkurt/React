@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 
+
 export function GithubUser( {username} ) {
      //using useState to update the state
     const [data,setData]=useState(null);

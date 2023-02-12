@@ -1,8 +1,10 @@
 
-export function Welcome({name}){
+
+export function Welcome(){
+  
     return (
   
-    <p>Welcome {name}</p>
+    <p>Welcome </p>
     
     
     )

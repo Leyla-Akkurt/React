@@ -4,14 +4,14 @@ import { useGithubUser } from "./useGithubUser"
 
 export function GithubUserList() {
  const [name,setName]=useState([]);
-const {data,setData,fetchGithubUser}=useGithubUser(name);
+const {data,fetchGithubUser}=useGithubUser(name);
  const [list,setList]=useState([]);
 
 
  const handleGetUserData=(event)=>{
  event.preventDefault();
     fetchGithubUser(name)
-    setList([...list,data.name|| data.login])
+    setList([...list, data.name || data.login])
     
   }
 
@@ -19,7 +19,7 @@ useEffect(()=>{
   console.log(`Usernames ${list}`)
 },[list])
 
-//console.log(list)
+console.log(list)
     return(
        
         <div>
@@ -28,11 +28,12 @@ useEffect(()=>{
             <button onClick={handleGetUserData}>Load User Data</button>
          
  
-            {
+     {        
     list.map((a,index)=>
-     <li key={index}>User Name: {a}</li>
+     <li key={a+index}>User Name: {a}</li>
    )
- }
+ } 
+
         </div>
         )
         

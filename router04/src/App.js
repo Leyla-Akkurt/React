@@ -11,9 +11,9 @@ export  function App({name,username}){
         <div>
           <Link to="/"> Welcome </Link> ||  <Link to="/counter"> Counter</Link> || <Link to="/:username"> UserName</Link>
       <Routes>
-        <Route path="/" element={<Welcome name={name}/>}/>
+        <Route path="/" element={<Welcome />}/>
         <Route path="/counter" element={<ClickCounter />}/>
-        <Route path="/:username" element={<ShowGithubUser username={username}/>}/>
+        <Route path="/:username" element={<ShowGithubUser />}/>
         
       </Routes>
       </div>

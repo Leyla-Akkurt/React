@@ -1,5 +1,5 @@
 
 
-export function Welcome({name}){
-    return <p>Welcome {name}</p>
+export function Welcome(){
+    return <p>Welcome </p>
 }

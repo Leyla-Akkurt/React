@@ -3,7 +3,7 @@ import { App } from "./App"
 export function Root(){
     return(
         <BrowserRouter>
-        <App name="Leyla" username="Leyla-Akkurt"/>
+        <App />
         </BrowserRouter>
 
 

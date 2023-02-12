@@ -9,7 +9,7 @@ export function GithubUser({username}){
     <div>
     
     {data && <h1>User Name: {data.name || data.login} </h1>} 
-    {error && <h1>Error </h1>} 
+    {!error && <h1>User Not Found </h1>} 
    
     
     </div>

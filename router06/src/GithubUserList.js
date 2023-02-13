@@ -4,27 +4,28 @@ import { useGithubUsers } from "./useGithubUsers";
 
 export function GithubUserList(){
     
-    const {users}=useGithubUsers();
+    const {users,error}=useGithubUsers();
     console.log(users);
-  /*   {
-        users.map(user=>
-            <li><Link to={`/users/${user.login}`}>{user.login}</Link></li>
-        )
-            }  */
+  //I write map function but an error occured users return undefined 
+  /*
+  {
+    users.map(user=>
+        <li><Link to={`/users/${user.login}`}>{user.login}</Link></li>
+    )
+  }*/
 
     return (
         <div>
+        {error && <h1>User Not Found </h1>} 
         <ul>
-        
-          {
-            users.map(user=>
-                <li><Link to={`/users/${user.login}`}>{user.login}</Link></li>
-            )
-                }
-             
-       
-    </ul>
-    <Outlet/>
+        {
+         users.map(user=>
+          <li><Link to={`/users/${user.login}`}>{user.login}</Link></li>
+      )
+        }
+       </ul>
+
+      <Outlet/>
     </div>
     )
 
